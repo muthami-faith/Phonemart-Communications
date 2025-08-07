@@ -62,13 +62,13 @@ const Homephm = () => {
 
             {Object.keys(groupedProducts).sort().map((brand) => (
                 <div key={brand} className="mb-2">
-                    <h4 className="text-start mb-3" style={{ color: '#20EA34' }}>
+                    <h4 className="text-start product-name mb-3" style={{ color: '#20EA34' }}>
                         <b>{brand}</b>
                     </h4>
                     <div className="row">
                         {groupedProducts[brand].slice(0, 4).map((product) => (
                             <div key={product.product_id} className="col-6 col-md-3 mb-4">
-                                <div className="card h-100  border-1 custom-card">
+                                <div className="card h-100 product-name border-1 custom-card">
                                     <img
                                         src={img_url + product.product_photo}
                                         alt={product.product_name}
@@ -76,7 +76,7 @@ const Homephm = () => {
                                         style={{ height: '220px', objectFit: 'contain' }}
                                     />
                                     <div className="card-body d-flex flex-column">
-                                        <h6 className="card-title product-name" style={{ color: '#000000' }}>
+                                        <h6 className="card-title" style={{ color: '#000000' }}>
                                             {product.product_name}
                                         </h6>
                                         <p className="card-text text-muted small fst-italic">
