@@ -42,7 +42,7 @@ const Accessories = () => {
             <div className="d-flex justify-content mb-2 mt-2 row">
                 <div className="col-md-6">
                     <h3 className="text-start mb-2" style={{ color: '#000000' }}>
-                    <b>🧩 Mobile Accessories Collection</b>
+                    <b className="product-name">🧩 Mobile Accessories Collection</b>
                     </h3>
                 </div>
                 <div className="col-md-6">
@@ -63,7 +63,7 @@ const Accessories = () => {
                 
             </div>
              <marquee behavior="scroll" direction="left" className="text-dark fw-semibold fs-6">
-                <i>Upgrade your Mobile Lifestyle today</i>
+                <i className="product-name">Upgrade your Mobile Lifestyle today</i>
             </marquee>
 
             
@@ -72,7 +72,7 @@ const Accessories = () => {
             <div className="row">
                 {filtered_products.map((acc) => (
                     <div key={acc.id} className="col-6 col-md-3 mb-4 d-flex justify-content-center">
-                        <div className="card h-100  border-1 custom-card" 
+                        <div className="card h-100  product-name border-1 custom-card" 
                         style={{
                             width: '100%',
                             maxWidth: '260px',
