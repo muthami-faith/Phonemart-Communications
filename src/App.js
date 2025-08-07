@@ -1,0 +1,76 @@
+import logo from './logo.svg';
+import { useEffect,useState } from 'react';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap'
+import { BrowserRouter as Router,Routes,Route,Link, useLocation } from 'react-router-dom';
+import Homephm from './components/Homephm';
+import Navbar from './components/Navbar';
+import Addphone from './components/Addphone';
+import Phones from './components/Phones';
+import Accessories from './components/Accessories';
+import Lipamdogo from './components/Lipamdogo';
+import Header from './components/Header';
+import Features from './components/Features';
+import Makepayment from './components/Makepayment';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+import Payments from './components/Payments';
+import CartPage from './components/CartPage';
+import { CartProvider } from './components/CartContext';
+import Footer from './components/Footer';
+import SearchResultsPage from './components/SearchResultsPage';
+import Contact from './components/Contact';
+import Footer2 from './components/Footer2';
+import Addacc from './components/Addacc';
+import Productinput from './components/Productinput';
+import Features2 from './components/Features2';
+import Aboutus from './components/Aboutus';
+
+// const user={name: 'Faith', role: 'admin'}
+ 
+
+function App() {
+
+  return (
+    <Router>
+      <CartProvider>
+      <header className='App-header' style={{ backgroundColor: '#000', color: '#20EA34' }} >
+        <i className='fs-7 p-1 ps-2' style={{ color: '#20EA34' }}>Visit our shops today, Groundfloor Tabby House, Thika</i>
+      </header>
+      {/* <div className="container row">
+        
+      </div> */}
+      <Header/>
+
+      <Navbar/>
+      <Routes className="container-fluid">
+        <Route path='/' element={<Homephm/>}></Route>
+        {/* <Route path='/addproduct' element={<AdminRoute user={user}><Addphone/></AdminRoute>}></Route> */}
+        <Route path="/search" element={<SearchResultsPage />} />
+        <Route path='/addphone' element={<Addphone/>}/>
+        <Route path='/addacc' element={<Addacc/>}/>
+        <Route path='/' element={<Phones/>}/>
+        <Route path='/accessories' element={<Accessories/>}/>
+        <Route path='/lipamdogo' element={<Lipamdogo/>}/>
+        <Route path='/features' element={<Features/>}/>
+        <Route path='/features2' element={<Features2/>}/>
+        <Route path='/signup' element={<Signup/>}/>
+        <Route path='/signin' element={<Signin/>}/>
+        <Route path="/cartpage" element={<CartPage/>} />
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path='/payments' element={<Payments/>}/>
+        <Route path='/productinput' element={<Productinput/>}/>
+        <Route path='/aboutus' element={<Aboutus/>}/>
+        
+
+      </Routes>
+      </CartProvider>
+      <Footer/>
+      <Footer2/>
+      </Router>
+    
+  );
+}
+
+export default App;
