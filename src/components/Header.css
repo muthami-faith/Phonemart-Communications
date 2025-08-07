@@ -614,11 +614,19 @@ a.text-dark:hover {
     transform: translateX(0%);
   }
 }
+.product-name {
+    font-size: 1rem; /* default size for desktop */
+    font-weight: bold;
+    color: #000000;
+}
 
 @media (max-width: 576px) {
   .card-img-top {
     height: 150px !important;
   }
+  .product-name {
+        font-size: 0.85rem; /* smaller size for phones */
+    }
 
   .card-body {
     padding: 0.5rem !important;
