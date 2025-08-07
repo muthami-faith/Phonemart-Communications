@@ -45,7 +45,7 @@ export default function CartPage() {
                     src={img_url + product.product_photo}
                     alt={product.product_name}
                     className="card-img-top p-2 rounded"
-                    style={{ width: '60px', height: '60px', objectFit: 'cover' }}
+                    style={{ width: '60px', height: '60px', objectFit: 'contain' }}
                   />
                   <div className="flex-grow-1 ps-3">
                     <h6 className="mb-1 fw-semibold">{product.product_name}</h6>
