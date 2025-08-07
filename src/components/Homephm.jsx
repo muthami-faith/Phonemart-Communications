@@ -51,7 +51,7 @@ const Homephm = () => {
             <Carousel />
 
             <marquee behavior="scroll" direction="left" className="text-dark fw-semibold product-name my-3 fs-6">
-                <i>Upgrade your Mobile Lifestyle today</i>
+                <i className="product-name">Upgrade your Mobile Lifestyle today</i>
             </marquee>
 
            
