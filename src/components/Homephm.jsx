@@ -50,7 +50,7 @@ const Homephm = () => {
 
             <Carousel />
 
-            <marquee behavior="scroll" direction="left" className="text-dark fw-semibold my-3 fs-6">
+            <marquee behavior="scroll" direction="left" className="text-dark fw-semibold product-name my-3 fs-6">
                 <i>Upgrade your Mobile Lifestyle today</i>
             </marquee>
 
@@ -76,7 +76,7 @@ const Homephm = () => {
                                         style={{ height: '220px', objectFit: 'contain' }}
                                     />
                                     <div className="card-body d-flex flex-column">
-                                        <h6 className="card-title" style={{ color: '#000000' }}>
+                                        <h6 className="card-title fw-bold" style={{ color: '#000000' }}>
                                             {product.product_name}
                                         </h6>
                                         <p className="card-text text-muted small fst-italic">
