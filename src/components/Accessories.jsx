@@ -41,8 +41,8 @@ const Accessories = () => {
 
             <div className="d-flex justify-content mb-2 mt-2 row">
                 <div className="col-md-6">
-                    <h3 className="text-start mb-2" style={{ color: '#000000' }}>
-                    <b className="product-name">🧩 Mobile Accessories Collection</b>
+                    <h3 className="text-start product-name mb-2" style={{ color: '#000000' }}>
+                    <b >🧩 Mobile Accessories Collection</b>
                     </h3>
                 </div>
                 <div className="col-md-6">
@@ -62,7 +62,7 @@ const Accessories = () => {
                 </div>
                 
             </div>
-             <marquee behavior="scroll" direction="left" className="text-dark fw-semibold fs-6">
+             <marquee behavior="scroll" direction="left" className="text-dark product-name fw-semibold fs-6">
                 <i className="product-name">Upgrade your Mobile Lifestyle today</i>
             </marquee>
 
