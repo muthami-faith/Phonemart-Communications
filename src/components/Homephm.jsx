@@ -55,7 +55,7 @@ const Homephm = () => {
             </marquee>
 
            
-            <h3 className="text-start mb-3" style={{ color: '#000000' }}>
+            <h3 className="text-start product-name mb-3" style={{ color: '#000000' }}>
                 <b>🔥 Pocket Friendly Prices</b>
             </h3>
             <hr />
@@ -76,7 +76,7 @@ const Homephm = () => {
                                         style={{ height: '220px', objectFit: 'contain' }}
                                     />
                                     <div className="card-body d-flex flex-column">
-                                        <h6 className="card-title fw-bold" style={{ color: '#000000' }}>
+                                        <h6 className="card-title product-name" style={{ color: '#000000' }}>
                                             {product.product_name}
                                         </h6>
                                         <p className="card-text text-muted small fst-italic">
