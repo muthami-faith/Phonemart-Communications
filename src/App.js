@@ -1,9 +1,9 @@
 import logo from './logo.svg';
-import { useEffect,useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap'
-import { BrowserRouter as Router,Routes,Route,Link, useLocation } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Homephm from './components/Homephm';
 import Navbar from './components/Navbar';
 import Addphone from './components/Addphone';
@@ -27,49 +27,65 @@ import Productinput from './components/Productinput';
 import Features2 from './components/Features2';
 import Aboutus from './components/Aboutus';
 
-// const user={name: 'Faith', role: 'admin'}
- 
+// Improved ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  const lastPathnameRef = useRef(pathname);
+
+  useEffect(() => {
+    if (lastPathnameRef.current !== pathname) {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth' // smooth scroll effect
+      });
+      lastPathnameRef.current = pathname;
+    }
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
-
   return (
     <Router>
       <CartProvider>
-      <header className='App-header' style={{ backgroundColor: '#000', color: '#20EA34' }} >
-        <i className='fs-7 p-1 ps-2' style={{ color: '#20EA34' }}>Visit our shops today, Groundfloor Tabby House, Thika</i>
-      </header>
-      {/* <div className="container row">
-        
-      </div> */}
-      <Header/>
+        <ScrollToTop /> {/* ✅ Smooth scroll to top on page change */}
+        <header
+          className='App-header'
+          style={{ backgroundColor: '#000', color: '#20EA34' }}
+        >
+          <i className='fs-7 p-1 ps-2' style={{ color: '#20EA34' }}>
+            Visit our shops today, Groundfloor Tabby House, Thika
+          </i>
+        </header>
 
-      <Navbar/>
-      <Routes className="container-fluid">
-        <Route path='/' element={<Homephm/>}></Route>
-        {/* <Route path='/addproduct' element={<AdminRoute user={user}><Addphone/></AdminRoute>}></Route> */}
-        <Route path="/search" element={<SearchResultsPage />} />
-        <Route path='/addphone' element={<Addphone/>}/>
-        <Route path='/addacc' element={<Addacc/>}/>
-        <Route path='/' element={<Phones/>}/>
-        <Route path='/accessories' element={<Accessories/>}/>
-        <Route path='/lipamdogo' element={<Lipamdogo/>}/>
-        <Route path='/features' element={<Features/>}/>
-        <Route path='/features2' element={<Features2/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/signin' element={<Signin/>}/>
-        <Route path="/cartpage" element={<CartPage/>} />
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path='/payments' element={<Payments/>}/>
-        <Route path='/productinput' element={<Productinput/>}/>
-        <Route path='/aboutus' element={<Aboutus/>}/>
-        
+        <Header />
+        <Navbar />
 
-      </Routes>
+        <Routes className="container-fluid">
+          <Route path='/' element={<Homephm />} />
+          <Route path="/search" element={<SearchResultsPage />} />
+          <Route path='/addphone' element={<Addphone />} />
+          <Route path='/addacc' element={<Addacc />} />
+          <Route path='/' element={<Phones />} />
+          <Route path='/accessories' element={<Accessories />} />
+          <Route path='/lipamdogo' element={<Lipamdogo />} />
+          <Route path='/features' element={<Features />} />
+          <Route path='/features2' element={<Features2 />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/signin' element={<Signin />} />
+          <Route path="/cartpage" element={<CartPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path='/payments' element={<Payments />} />
+          <Route path='/productinput' element={<Productinput />} />
+          <Route path='/aboutus' element={<Aboutus />} />
+        </Routes>
+
+        <Footer />
+        <Footer2 />
       </CartProvider>
-      <Footer/>
-      <Footer2/>
-      </Router>
-    
+    </Router>
   );
 }
 
