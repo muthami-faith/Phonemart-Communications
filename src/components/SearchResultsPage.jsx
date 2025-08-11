@@ -48,7 +48,7 @@ const SearchResultsPage = () => {
       ) : (
         <div className="row">
           {filtered.map(product => (
-            <div className="col-md-3 col-sm-6 mb-4 d-flex justify-content-center" key={product.id}>
+            <div className="col-6 col-md-3 mb-4 d-flex justify-content-center" key={product.id}>
               <div className="card h-100 border-1 custom-card" 
                 style={{
                   width: '100%',
