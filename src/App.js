@@ -55,9 +55,7 @@ function App() {
           className='App-header'
           style={{ backgroundColor: '#000', color: '#20EA34' }}
         >
-          <i className='fs-7 p-1 ps-2' style={{ color: '#20EA34' }}>
-            Visit our shops today, Groundfloor Tabby House, Thika
-          </i>
+          
         </header>
 
         <Header />
