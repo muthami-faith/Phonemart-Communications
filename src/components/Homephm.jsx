@@ -67,7 +67,7 @@ const Homephm = () => {
                     </h4>
                     <div className="row">
                         {groupedProducts[brand].slice(0, 4).map((product) => (
-                            <div key={product.product_id} className="col-6 col-md-3 mb-4">
+                            <div key={product.product_id} className="col-6 col-md-3 mb-4" onClick={() => navigate('/features', { state: { product, img_url } })}>
                                 <div className="card h-100 product-name border-1 custom-card">
                                     <img
                                         src={img_url + product.product_photo}
