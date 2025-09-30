@@ -51,13 +51,6 @@ function App() {
     <Router>
       <CartProvider>
         <ScrollToTop /> {/* ✅ Smooth scroll to top on page change */}
-        <header
-          className='App-header'
-          style={{ backgroundColor: '#000', color: '#20EA34' }}
-        >
-          
-        </header>
-
         <Header />
         <Navbar />
 
