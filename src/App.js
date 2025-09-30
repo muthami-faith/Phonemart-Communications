@@ -50,7 +50,7 @@ function App() {
   return (
     <Router>
       <CartProvider>
-        <ScrollToTop /> {/* ✅ Smooth scroll to top on page change */}
+        <ScrollToTop /> 
         <Header />
         <Navbar />
 
