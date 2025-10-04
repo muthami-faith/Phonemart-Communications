@@ -30,7 +30,7 @@ const Header = () => {
                 src="phonemartlogo1.PNG"
                 alt="logo"
                 className="img-fluid"
-                style={{ height: '60px', objectFit: 'contain' }}
+                style={{ height: '60px', objectFit: 'contain', mixBlendMode: 'multiply', backgroundColor: 'transparent', transition: 'all 0.3s ease-in-out', border: '8px' }}
               />
             </Link>
           </div>
