@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from './CartContext';
-import UpdateProductImages from './UpdateProductImages';
 
 const Features = () => {
     const { addToCart } = useCart();
@@ -136,9 +135,6 @@ const Features = () => {
                     >
                         Buy Now
                     </button>
-                    <div className="mt-4">
-                        <UpdateProductImages productId={product.product_id} />
-                    </div>
                 </div>
             </div>
         </div>
