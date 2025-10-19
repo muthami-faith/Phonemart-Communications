@@ -1,14 +1,14 @@
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 const Addphone = () => {
     const [product_name, setProductName] = useState("");
     const [product_description, setProductdescription] = useState("");
-    const [product_cost, setProduct_cost] = useState(""); // You may remove this if each storage has its own price
-    const [product_photo, setProduct_photo] = useState("");
     const [features, setFeatures] = useState("");
     const [storages, setStorages] = useState([{ size: '', price: '' }]);
+    const [product_photo, setProduct_photo] = useState(null);
+    const [secondaryPhoto1, setSecondaryPhoto1] = useState(null);
+    const [secondaryPhoto2, setSecondaryPhoto2] = useState(null);
     const [loading, setLoading] = useState("");
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
@@ -40,8 +40,13 @@ const Addphone = () => {
             data.append("product_name", product_name);
             data.append("product_description", product_description);
             data.append("features", features);
-            data.append("product_photo", product_photo);
-            data.append("storages", JSON.stringify(storages)); // send as JSON
+            data.append("product_photo", product_photo); // Required image
+
+            // Optional additional images
+            if (secondaryPhoto1) data.append("secondary_photo1", secondaryPhoto1);
+            if (secondaryPhoto2) data.append("secondary_photo2", secondaryPhoto2);
+
+            data.append("storages", JSON.stringify(storages));
 
             const response = await axios.post("https://ninjafaith.pythonanywhere.com/api/add_product", data);
 
@@ -52,8 +57,10 @@ const Addphone = () => {
             setProductName("");
             setProductdescription("");
             setFeatures("");
-            setProduct_photo("");
             setStorages([{ size: '', price: '' }]);
+            setProduct_photo(null);
+            setSecondaryPhoto1(null);
+            setSecondaryPhoto2(null);
         } catch (error) {
             setLoading("");
             if (error.response) {
@@ -134,17 +141,33 @@ const Addphone = () => {
                         + Add Storage Option
                     </button>
 
-                    <label className="text-primary">Browse/Upload phone image</label>
+                    {/* Image Uploads */}
+                    <label className="text-primary">Main Phone Image (required)</label>
                     <input
                         type="file"
-                        className="form-control"
+                        className="form-control mb-3"
                         accept="image/*"
                         onChange={(e) => setProduct_photo(e.target.files[0])}
                         required
                     />
-                    <br />
 
-                    <button type="submit" className="btn btn-primary">Add phone</button>
+                    <label className="text-info">Secondary Image 1 (optional)</label>
+                    <input
+                        type="file"
+                        className="form-control mb-3"
+                        accept="image/*"
+                        onChange={(e) => setSecondaryPhoto1(e.target.files[0])}
+                    />
+
+                    <label className="text-info">Secondary Image 2 (optional)</label>
+                    <input
+                        type="file"
+                        className="form-control mb-3"
+                        accept="image/*"
+                        onChange={(e) => setSecondaryPhoto2(e.target.files[0])}
+                    />
+
+                    <button type="submit" className="btn btn-primary">Add Phone</button>
                 </form>
             </div>
         </div>
