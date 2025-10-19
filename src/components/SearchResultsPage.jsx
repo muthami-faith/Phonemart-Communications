@@ -49,7 +49,7 @@ const SearchResultsPage = () => {
         <div className="row">
           {filtered.map(product => (
             <div className="col-6 col-md-3 mb-4 d-flex justify-content-center" key={product.id}>
-              <div className="card h-100 border-1 custom-card" 
+              <div className="card h-100 border-1 custom-card" onClick={() => navigate('/features', { state: { product, img_url } })} 
                 style={{
                   width: '100%',
                   maxWidth: '260px',
