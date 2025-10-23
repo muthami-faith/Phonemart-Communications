@@ -82,7 +82,7 @@ const Features = () => {
                 </div>
 
                 {/* Right Column: Product Details */}
-                <div className="col-md-6 ps-4">
+                <div className="col-md-6 p-3">
                     <h2 className="fw-bold mb-3 border-bottom pb-2">{product.product_name}</h2>
                     <p><strong>Brand:</strong> <span className='fs-5'>{product.product_description}</span></p>
 
