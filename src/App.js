@@ -12,7 +12,6 @@ import Accessories from './components/Accessories';
 import Lipamdogo from './components/Lipamdogo';
 import Header from './components/Header';
 import Features from './components/Features';
-import Makepayment from './components/Makepayment';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Payments from './components/Payments';
